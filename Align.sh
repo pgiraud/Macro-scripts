@@ -39,13 +39,13 @@ for e in "${files[@]:0:$middle+1}"
   done
 
 # First half aligning: 
-align_image_stack "$OPT" --use-given-order -m -a P1_ ${revfiles[@]} &>out1.log &
+align_image_stack  --use-given-order -m -a P1_ ${revfiles[@]} &>out1.log &
 
 # A 10s delay, to have a phase shift between two parallel processes:
 sleep 10
 
 # Second half aligning:
-align_image_stack "$OPT" --use-given-order -m -a P2_ ${files[@]:$middle} &>out2.log &
+align_image_stack --use-given-order -m -a P2_ ${files[@]:$middle} &>out2.log &
 
 # Waiting for both processes to finish:
 wait

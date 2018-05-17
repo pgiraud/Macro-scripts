@@ -12,7 +12,7 @@ over=0.3
 Nover_min=2
 
 # Creating the list of tiff images to process:
-/usr/bin/ls -1 OUT*.tif 2>/dev/null > List
+ls -1 OUT*.tif 2>/dev/null > List
 
 # Number of input files:
 N=`cat List|wc -l`
